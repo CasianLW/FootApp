@@ -8,9 +8,13 @@
 
 <script>
 import { defineComponent } from "vue";
+import { IonMenuButton } from "@ionic/vue";
 
 export default defineComponent({
   name: "MenuComponent",
+  components: {
+    IonMenuButton,
+  },
 });
 </script>
 
