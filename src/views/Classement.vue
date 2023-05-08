@@ -1,5 +1,5 @@
 <template>
-  <menu-component></menu-component>
+  <menu-component />
 
   <h2 class="title" v-bind="$attrs">Classement</h2>
   <router-link
@@ -41,6 +41,7 @@
 <script lang="ts">
 import {
   IonCard,
+  IonPage,
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
@@ -64,6 +65,7 @@ export default defineComponent({
   },
   components: {
     IonCard,
+    IonPage,
     IonCardContent,
     IonCardHeader,
     IonCardSubtitle,
@@ -79,11 +81,17 @@ export default defineComponent({
       fetch(
         `https://www.thesportsdb.com/api/v1/json/3/lookuptable.php?l=${this.id}&s=2022-2023`
       )
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
         .then((json) => {
-          // console.log(json);
-
           this.list = json.table;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
         });
     },
   },
