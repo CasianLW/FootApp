@@ -10,3 +10,5 @@ FootApp
 
 1. START PROJECT `ionic start FootApp sidemenu --no-ts`
 1. Create empty views & routes
+1. Import all ressources you need (images, etc)
+1. Create MenuComponent (needed for all pages)
