@@ -11,6 +11,6 @@ FootApp
 1. START PROJECT `ionic start FootApp sidemenu --no-ts`
 1. Create empty views & routes
 1. Import all ressources you need (images, etc)
-1. Create MenuComponent (needed for all pages)
+1. Create MenuComponent (needed for all pages) + sidemenu (app.vue: router links to pages)
 1. Start completing the Home.vue
 1. Do the same with the other views (same design as home)
