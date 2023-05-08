@@ -23,15 +23,14 @@ const routes: Array<RouteRecordRaw> = [
     component: Equipe,
     name: "equipe",
   },
-  // Add the following routes from the JavaScript router
-  {
-    path: "",
-    redirect: "/folder/Inbox",
-  },
-  {
-    path: "/folder/:id",
-    component: () => import("../views/FolderPage.vue"),
-  },
+  // {
+  //   path: "",
+  //   redirect: "/folder/Inbox",
+  // },
+  // {
+  //   path: "/folder/:id",
+  //   component: () => import("../views/FolderPage.vue"),
+  // },
 ];
 
 const router = createRouter({
