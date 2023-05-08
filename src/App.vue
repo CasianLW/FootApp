@@ -5,6 +5,13 @@
         <ion-content>
           <ion-list id="inbox-list">
             <ion-list-header>Menu</ion-list-header>
+
+            <router-link to="/">
+              <ion-item>
+                <ion-label>Homepage</ion-label>
+              </ion-item>
+            </router-link>
+
             <h2>Ligue 1</h2>
             <router-link
               to="/ligues/4334/classement"
@@ -82,7 +89,10 @@
           </ion-list>
         </ion-content>
       </ion-menu>
-      <ion-router-outlet id="main-content"></ion-router-outlet>
+      <!-- <ion-router-outlet id="main-content" mode="in-out"></ion-router-outlet> -->
+      <ion-content id="main-content" class="ion-padding">
+        <router-view :key="$route.fullPath" mode="in-out"></router-view>
+      </ion-content>
     </ion-split-pane>
   </ion-app>
 </template>
@@ -102,31 +112,15 @@ import {
   IonRouterOutlet,
   IonSplitPane,
 } from "@ionic/vue";
-
-import { ComputedRef, Ref, ref, watch } from "vue";
-import {
-  archiveOutline,
-  archiveSharp,
-  bookmarkOutline,
-  bookmarkSharp,
-  heartOutline,
-  heartSharp,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
-} from "ionicons/icons";
-import { computed } from "vue";
 </script>
 
 <style scoped>
-ion-menu ion-content {
-  --background: var(--ion-item-background, var(--ion-background-color, #fff));
-}
+/* ion-menu ion-content {
+  --background: var(
+    --ion-item-background,
+    var(--ion-background-color, rgb(31, 26, 26) ;)
+  );
+} */
 
 ion-menu.md ion-content {
   --padding-start: 8px;
