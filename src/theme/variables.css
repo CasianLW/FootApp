@@ -1,10 +1,21 @@
 html,
 body,
-ion-router-outlet {
+ion-router-outlet,
+ion-page,
+ion-content {
   height: 100%;
   overflow: auto !important;
+  overflow-y: auto;
 }
 
 ion-content {
   --overflow: auto;
+}
+
+ion-app,
+ion-split-pane,
+ion-content,
+ion-page {
+  background: rgb(31, 26, 26) !important;
+  background-color: rgb(31, 26, 26) !important;
 }
