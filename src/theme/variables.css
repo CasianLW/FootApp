@@ -19,3 +19,6 @@ ion-page {
   background: rgb(31, 26, 26) !important;
   background-color: rgb(31, 26, 26) !important;
 }
+a {
+  color: rgb(31, 26, 26) !important;
+}
