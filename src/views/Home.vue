@@ -1,43 +1,57 @@
 <template>
-  <menu-component></menu-component>
+  <ion-page>
+    <menu-component />
 
-  <ion-card style="padding: 0 20px; background: transparent">
-    <h1>Bienvenue,</h1>
-    <p style="font-size: 12px">
-      Notre application de football vous permet de suivre les classements, les
-      équipes et les matchs en temps réel.
-    </p>
-  </ion-card>
-  <ion-card class="custom-card" v-for="(league, index) in leagues" :key="index">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card-title class="custom-card-title">{{
-            league.title
-          }}</ion-card-title>
-          <router-link :to="league.classmentLink" class="custom-link"
-            ><ion-icon name="arrow-forward-outline"></ion-icon> Voir le
-            classement</router-link
-          >
-          <router-link :to="league.teamsLink" class="custom-link"
-            ><ion-icon name="arrow-forward-outline"></ion-icon> Voir les
-            équipes</router-link
-          >
-        </ion-col>
-        <ion-col>
-          <ion-card-content class="custom-card-content">
-            <img :src="league.image" alt="League logo" />
-          </ion-card-content>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
+    <ion-card
+      style="
+        padding: 0 20px;
+        background: transparent;
+        box-shadow: none;
+        color: rgb(31, 26, 26);
+      "
+    >
+      <h1>Bienvenue,</h1>
+      <p style="font-size: 12px">
+        Notre application de football vous permet de suivre les classements, les
+        équipes et les matchs en temps réel.
+      </p>
+    </ion-card>
+    <ion-card
+      class="custom-card"
+      v-for="(league, index) in leagues"
+      :key="index"
+    >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card-title class="custom-card-title">{{
+              league.title
+            }}</ion-card-title>
+            <router-link :to="league.classmentLink" class="custom-link">
+              <ion-icon name="arrow-forward-outline"></ion-icon> Voir le
+              classement
+            </router-link>
+            <router-link :to="league.teamsLink" class="custom-link">
+              <ion-icon name="arrow-forward-outline"></ion-icon> Voir les
+              équipes
+            </router-link>
+          </ion-col>
+          <ion-col>
+            <ion-card-content class="custom-card-content">
+              <img :src="league.image" alt="League logo" />
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </ion-page>
 </template>
 
 <script>
 import MenuComponent from "@/components/MenuComponent.vue";
 import {
   IonCard,
+  IonPage,
   IonCardTitle,
   IonCardContent,
   IonCardHeader,
@@ -45,6 +59,9 @@ import {
   IonRow,
   IonCol,
   IonIcon,
+  IonRouterOutlet,
+  IonSplitPane,
+  IonApp,
 } from "@ionic/vue";
 import { defineComponent } from "vue";
 
@@ -79,6 +96,7 @@ const CustomCard = defineComponent({
   name: "CustomCard",
   components: {
     IonCard,
+    IonPage,
     IonCardTitle,
     IonCardContent,
     IonCardHeader,
@@ -87,6 +105,9 @@ const CustomCard = defineComponent({
     IonCol,
     IonIcon,
     MenuComponent,
+    IonRouterOutlet,
+    IonSplitPane,
+    IonApp,
   },
   setup() {
     return { leagues };
