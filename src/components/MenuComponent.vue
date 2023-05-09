@@ -1,7 +1,10 @@
 <template>
   <div class="menu-container">
     <div class="menu">
-      <ion-menu-button color="primary"></ion-menu-button>
+      <ion-menu-button
+        style="color: rgb(31, 26, 26)"
+        color=""
+      ></ion-menu-button>
     </div>
   </div>
 </template>
